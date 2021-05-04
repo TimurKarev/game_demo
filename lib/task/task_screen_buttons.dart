@@ -8,38 +8,44 @@ class TestScreenButton extends StatelessWidget {
 
   const TestScreenButton({Key key, this.child, this.width, this.primaryColor}) : super(key: key);
 
-  factory TestScreenButton.forParent() {
+  factory TestScreenButton.forParent({short=false}) {
+    var cldn = <Widget> [Image.asset('images/help_button_icon.png')];
+    if (!short) {
+      cldn.add(SizedBox(width: 16.0));
+      cldn.add(Text('Родителю'));
+    }
     return TestScreenButton(
       child: Row(
-        children: [
-          Image.asset('images/help_button_icon.png'),
-          SizedBox(width: 16.0),
-          Text('Родителю'),
-        ],
+        children: cldn,
       ),
-      width: 233.0,
+      width: short ? 0.0 : 233.0,
       primaryColor: Colors.lightBlue,
     );
   }
 
-  factory TestScreenButton.forSound() {
+  factory TestScreenButton.forSound({short=false}) {
+    var cldn = <Widget> [Image.asset('images/sound_button_icon.png')];
+    if (!short) {
+      cldn.add(SizedBox(width: 8.0));
+      cldn.add(Text('Звук'));
+    }
     return TestScreenButton(
       child: Row(
-        children: [
-          Image.asset('images/sound_button_icon.png'),
-          SizedBox(width: 8.0),
-          Text('Звук'),
-        ],
+        children: cldn,
       ),
-      width: 229.0,
+      width: short ? 0.0 : 229.0,
       primaryColor: Colors.deepPurpleAccent,
     );
   }
 
-  factory TestScreenButton.forAnswer() {
+  factory TestScreenButton.forAnswer({short=false}) {
+    var text = 'Принять ответ';
+    if (short) {
+      text = 'Ответ';
+    }
     return TestScreenButton(
-      child: Text('Принять ответ'),
-      width: 470.0,
+      child: Text(text),
+      width: short ? 0.0 : 470.0,
       primaryColor: Colors.green,
     );
   }

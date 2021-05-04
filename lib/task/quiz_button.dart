@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class QuizButton extends StatefulWidget {
-  const QuizButton({Key key, this.asset}) : super(key: key);
+  const QuizButton({
+    Key key,
+    this.asset,
+  }) : super(key: key);
 
   @override
   _QuizButtonState createState() => _QuizButtonState();
@@ -26,7 +29,7 @@ class _QuizButtonState extends State<QuizButton> {
     final style = ButtonStyle(
       backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
       side: side,
-      minimumSize: MaterialStateProperty.all<Size>(Size(220.0, 180.0)),
+//      minimumSize: MaterialStateProperty.all<Size>(widget.size),
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),

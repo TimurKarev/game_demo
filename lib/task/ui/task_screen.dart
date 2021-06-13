@@ -72,7 +72,7 @@ class TaskScreen extends StatelessWidget {
 
 class TaskButtonClose extends StatelessWidget {
   const TaskButtonClose({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

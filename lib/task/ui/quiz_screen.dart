@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game_demo/task/ui/quiz_button.dart';
+import 'package:game_demo/task/ui/test/test_screen_widget.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 /// Экран с вопросом и вариантами ответов
@@ -10,7 +11,7 @@ class QuizScreen extends StatefulWidget {
 
 class _QuizScreenState extends State<QuizScreen>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  TabController? _tabController;
 
   @override
   void initState() {
@@ -22,7 +23,7 @@ class _QuizScreenState extends State<QuizScreen>
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    _tabController.dispose();
+    _tabController!.dispose();
   }
 
   @override
@@ -42,20 +43,7 @@ class _QuizScreenState extends State<QuizScreen>
             ],
           ),
           Expanded(
-            child: Center(
-              child: Text(
-                'Выбери зеленое, но не круглое.',
-                style: TextStyle(
-                  fontSize: 28.0,
-                ),
-              ),
-            ),
-          ),
-          ScreenTypeLayout.builder(
-            desktop: (BuildContext context ) => QuizButtonsLayoutDesktop(),
-            tablet: (BuildContext context ) => QuizButtonsLayoutDesktop(),
-            mobile: (BuildContext context ) => QuizButtonsLayoutMobile(),
-            watch: (BuildContext context ) => QuizButtonsLayoutMobile(),
+            child: QuizScreenWidget(),
           ),
         ],
       ),
@@ -63,9 +51,10 @@ class _QuizScreenState extends State<QuizScreen>
   }
 }
 
+
 class QuizButtonsLayoutDesktop extends StatelessWidget {
   const QuizButtonsLayoutDesktop({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -120,7 +109,7 @@ class QuizButtonsLayoutDesktop extends StatelessWidget {
 
 class QuizButtonsLayoutMobile extends StatelessWidget {
   const QuizButtonsLayoutMobile({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

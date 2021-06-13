@@ -3,7 +3,7 @@ import 'test_footer_button.dart';
 
 class TestFooterWidget extends StatelessWidget {
   const TestFooterWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

@@ -42,7 +42,7 @@ class BarItemWithValueDeskTop extends StatelessWidget {
   final asset;
   final value;
 
-  const BarItemWithValueDeskTop({Key key, this.asset, this.value})
+  const BarItemWithValueDeskTop({Key? key, this.asset, this.value})
       : super(key: key);
 
   @override
@@ -82,7 +82,7 @@ class BarItemWithValueTablet extends StatelessWidget {
   final asset;
   final value;
 
-  const BarItemWithValueTablet({Key key, this.asset, this.value})
+  const BarItemWithValueTablet({Key? key, this.asset, this.value})
       : super(key: key);
 
   @override

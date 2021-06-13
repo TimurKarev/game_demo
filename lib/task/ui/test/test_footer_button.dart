@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:game_demo/task/ui/const/task_layout_sizes.dart';
 
 class TestFooterButton extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
   final width;
   final primaryColor;
   final _height = 60.0;
 
-  const TestFooterButton({Key key, this.child, this.width, this.primaryColor}) : super(key: key);
+  const TestFooterButton({Key? key, this.child, this.width, this.primaryColor}) : super(key: key);
 
-  factory TestFooterButton.forParent({@required BoxConstraints constraints}) {
+  factory TestFooterButton.forParent({required BoxConstraints constraints}) {
     var cldn = <Widget> [Image.asset('images/help_button_icon.png')];
     var width = 95.0;
     if (constraints.maxWidth > TaskLayoutSizes.small) {
@@ -29,7 +29,7 @@ class TestFooterButton extends StatelessWidget {
     );
   }
 
-  factory TestFooterButton.forSound({@required BoxConstraints constraints}) {
+  factory TestFooterButton.forSound({required BoxConstraints constraints}) {
     var cldn = <Widget> [Image.asset('images/sound_button_icon.png')];
     var width = 95.0;
     if (constraints.maxWidth > TaskLayoutSizes.small) {
@@ -49,7 +49,7 @@ class TestFooterButton extends StatelessWidget {
     );
   }
 
-  factory TestFooterButton.forAnswer({@required BoxConstraints constraints}) {
+  factory TestFooterButton.forAnswer({required BoxConstraints constraints}) {
     var text = 'Принять ответ';
     var width = 470.0;
     if (constraints.maxWidth < TaskLayoutSizes.small) {

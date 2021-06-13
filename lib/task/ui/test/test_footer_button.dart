@@ -1,51 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:game_demo/task/ui/const/task_layout_sizes.dart';
 
-class TestScreenButton extends StatelessWidget {
+class TestFooterButton extends StatelessWidget {
   final Widget child;
   final width;
   final primaryColor;
   final _height = 60.0;
 
-  const TestScreenButton({Key key, this.child, this.width, this.primaryColor}) : super(key: key);
+  const TestFooterButton({Key key, this.child, this.width, this.primaryColor}) : super(key: key);
 
-  factory TestScreenButton.forParent({short=false}) {
+  factory TestFooterButton.forParent({@required BoxConstraints constraints}) {
     var cldn = <Widget> [Image.asset('images/help_button_icon.png')];
-    if (!short) {
+    var width = 95.0;
+    if (constraints.maxWidth > TaskLayoutSizes.small) {
+      width = 130.0;
+    }
+    if (constraints.maxWidth > TaskLayoutSizes.medium) {
       cldn.add(SizedBox(width: 16.0));
       cldn.add(Text('Родителю'));
+      width = 233.0;
     }
-    return TestScreenButton(
+    return TestFooterButton(
       child: Row(
         children: cldn,
       ),
-      width: short ? 0.0 : 233.0,
+      width: width,
       primaryColor: Colors.lightBlue,
     );
   }
 
-  factory TestScreenButton.forSound({short=false}) {
+  factory TestFooterButton.forSound({@required BoxConstraints constraints}) {
     var cldn = <Widget> [Image.asset('images/sound_button_icon.png')];
-    if (!short) {
+    var width = 95.0;
+    if (constraints.maxWidth > TaskLayoutSizes.small) {
+      width = 130.0;
+    }
+    if (constraints.maxWidth > TaskLayoutSizes.medium) {
       cldn.add(SizedBox(width: 8.0));
       cldn.add(Text('Звук'));
+      width = 233.0;
     }
-    return TestScreenButton(
+    return TestFooterButton(
       child: Row(
         children: cldn,
       ),
-      width: short ? 0.0 : 229.0,
+      width: width,
       primaryColor: Colors.deepPurpleAccent,
     );
   }
 
-  factory TestScreenButton.forAnswer({short=false}) {
+  factory TestFooterButton.forAnswer({@required BoxConstraints constraints}) {
     var text = 'Принять ответ';
-    if (short) {
+    var width = 470.0;
+    if (constraints.maxWidth < TaskLayoutSizes.small) {
       text = 'Ответ';
+      width = 80.0;
     }
-    return TestScreenButton(
+    return TestFooterButton(
       child: Text(text),
-      width: short ? 0.0 : 470.0,
+      width: width,
       primaryColor: Colors.green,
     );
   }
@@ -55,7 +68,6 @@ class TestScreenButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: primaryColor,
-        // shadowColor: Colors.lightBlue[200],
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(14),
         ),

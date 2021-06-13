@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game_demo/task/task_screen.dart';
+import 'package:game_demo/task/ui/task_screen.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 void main() {

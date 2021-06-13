@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game_demo/task/quiz_button.dart';
+import 'package:game_demo/task/ui/quiz_button.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 /// Экран с вопросом и вариантами ответов
@@ -44,7 +44,7 @@ class _QuizScreenState extends State<QuizScreen>
           Expanded(
             child: Center(
               child: Text(
-                'Выбери зеленное, но не круглое.',
+                'Выбери зеленое, но не круглое.',
                 style: TextStyle(
                   fontSize: 28.0,
                 ),

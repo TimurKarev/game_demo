@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:game_demo/task/task_progress_bar.dart';
-import 'package:game_demo/task/test_screen.dart';
+import 'package:game_demo/task/ui/task_progress_bar.dart';
+import 'package:game_demo/task/ui/test/test_screen.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 /// Главный экран с вопросником
